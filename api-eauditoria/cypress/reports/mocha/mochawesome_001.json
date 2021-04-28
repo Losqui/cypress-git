@@ -1,0 +1,196 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2021-04-12T14:48:00.927Z",
+    "end": "2021-04-12T14:51:23.407Z",
+    "duration": 202480,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bf442dd3-ce16-4cc9-9ee7-6bfb1eedb3a2",
+      "title": "",
+      "fullFile": "cypress\\integration\\eauditoriatwo.spec.js",
+      "file": "cypress\\integration\\eauditoriatwo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "65a0ff68-c307-499f-b92d-bc17e2c39a01",
+          "title": "Módulo e-Auditor",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "98886ba3-1ddc-41d8-82a9-41ca165496c9",
+              "title": "Testes no Cadastro de Empresas",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar empresas",
+                  "fullTitle": "Módulo e-Auditor Testes no Cadastro de Empresas Cadastrar empresas",
+                  "timedOut": null,
+                  "duration": 49253,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#CNPJ_Cadastro').type('17685872000133');\ncy.get('#Cidade_Cadastro').type('Carmo do Rio Claro');\ncy.get('#Razao_Social_Cadastro').type('DSG FARMA JD AMERICA LTDA');\ncy.get('#Regime_Tributacao_Cadastro_Input').type('Simples Nacional');\ncy.get('em').click();\ncy.get('#ctl00_central_UF_Cadastro_Input').type('MG');\ncy.get('em').click();\ncy.wait(2000);\ncy.get('#IE_Cadastro').type('0021090320019');\ncy.wait(2000);\ncy.get('#btnSalvar2').click();\ncy.timeout(30000);\ncy.get('.confirm').should('exist');\ncy.get('.confirm').click();\ncy.wait(5000);\ncy.get('#ContentSidebarLeft_menuSidebarLeft_btnPreCadastro > .btn-action-sidebar').click();\ncy.wait(3000);\ncy.get('#CNPJ_Cadastro').type('02126840000120');\ncy.get('#Cidade_Cadastro').type('Juiz de Fora');\ncy.get('#Razao_Social_Cadastro').type('GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP');\ncy.get('#ctl00_central_UF_Cadastro_Input').type('MG');\ncy.get('em').click();\ncy.get('#Regime_Tributacao_Cadastro_Input').type('Simples Nacional');\ncy.get('#IE_Cadastro').type('2237135870051');\ncy.get('#btnSalvar2').click();\ncy.timeout(30000);\ncy.get('.confirm').should('exist');\ncy.get('.confirm').click();\ncy.timeout(30000); // cy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]\").should('exist')\n//cy.get('#ContentSidebarLeft_menuSidebarLeft_btnPreCadastro > .btn-action-sidebar').click()\n//cy.get('#ContentSidebarLeft_menuSidebarLeft_btnPreCadastro > .btn-action-sidebar').click()\n// cy.get('#ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresas_i0_lblempresa').click()\n// cy.get('#area_dados > .titulo-card').should('be.visible')\n// cy.get('.hamburger-box').click()\n// cy.get('#ContentSidebarLeft_menuSidebarLeft_btnPreCadastro > .btn-action-sidebar').click()\n//cy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'DSG FARMA JD AMERICA LTDA - 17685872000133')]\").should('exist')\n//li[@class='rcbItem']/descendant-or-self::*/text()",
+                  "err": {
+                    "message": "CypressError: cy.type() failed because it targeted a disabled element.\n\nThe element typed into was:\n\n  > <input name=\"ctl00$central$IE_Cadastro\" id=\"IE_Cadastro\" type=\"text\" class=\"form-control input\">\n\nYou should ensure the element does not have an attribute named 'disabled' before typing into it.",
+                    "estack": "CypressError: cy.type() failed because it targeted a disabled element.\n\nThe element typed into was:\n\n  > <input name=\"ctl00$central$IE_Cadastro\" id=\"IE_Cadastro\" type=\"text\" class=\"form-control input\">\n\nYou should ensure the element does not have an attribute named 'disabled' before typing into it.\n    at Object.cypressErr (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86194:17)\n    at https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:68249:24\n    at tryCatcher (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118320:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114812:14)",
+                    "diff": null
+                  },
+                  "uuid": "e6e8f084-46d6-4c4c-ab07-2ca567dccf5c",
+                  "parentUUID": "98886ba3-1ddc-41d8-82a9-41ca165496c9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Alterar o cadastro",
+                  "fullTitle": "Módulo e-Auditor Testes no Cadastro de Empresas Alterar o cadastro",
+                  "timedOut": null,
+                  "duration": 46063,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('.rtMid > .rtIn > .rtTemplate').click();\ncy.wait(3000);\ncy.get('#ctl00_central_maCNPJ').should('contain', '17685872000133');\ncy.get('#nav3Link').click();\ncy.get('#chklistXML > tbody').click();\ncy.get('#chklistNFCe > tbody').click();\ncy.wait(5000);\ncy.get('#btnSalvar2').click();\ncy.wait(2000);\ncy.get('.confirm').should('exist'); // cy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'DSG FARMA JD AMERICA LTDA - 17685872000133')]\").click()\n// cy.wait(2000)\n// cy.get('#MenuPadrao_MenuInicio').click()\n// cy.wait(5000)\n// cy.get('#menu_principal > .navbar > .nav > :nth-child(4) > .nav-link').click()\n// cy.get('#MenuPadrao_MenurelatoriosEmpresa').click()\n// cy.wait(1000)\n// cy.get('#MenuPadrao_MenuInicio').click()\n// cy.wait(1000)\n// cy.get('#menu_principal > .navbar > .nav > :nth-child(4) > .nav-link').click()\n// cy.get('#MenuPadrao_MenurelatoriosEmpresa').click()\n// cy.wait(2000)\n// cy.get('#ContentSidebarLeft_menuSidebarLeft_btnPreCadastro > .btn-action-sidebar').click()\n// Cadastrar a segunda empresa          \n//cy.get('#Regime_Tributacao_Cadastro_Input').type('Simples Nacional')\n//cy.get('#Regime_Tributacao_Cadastro_DropDown > .rcbScroll > .rcbList').contains('Simples Nacional').click()\n// cy.get('#IE_Cadastro').type('2237135870051')\n//cy.get('#Razao_Social_Cadastro').type('GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP')\n// cy.get('#Cidade_Cadastro').type('Juiz de Fora')\n// cy.get('#CNPJ_Cadastro').type('02126840000120')\n// cy.get('#ctl00_central_UF_Cadastro_Arrow').click()\n// cy.get('#ctl00_central_UF_Cadastro_DropDown > .rcbScroll > .rcbList').wait(300).contains('MG').click()\n// cy.wait(5000)\n//cy.get('#btnSalvar2').click()\n// cy.timeout(30000)\n// cy.get('.confirm').should('exist')\n// cy.get('.confirm').click()\n// cy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]\").should('exist')\n/*  // Cadastrar a segunda empresa          \n cy.get('#Razao_Social_Cadastro').type('GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP')\n cy.get('#Regime_Tributacao_Cadastro_Input').type('Lucro Presumido')\n cy.get('#IE_Cadastro').type('2237135870051')         \n cy.get('#ctl00_central_UF_Cadastro_Input').type('MG')                        \n cy.get('em').click()           \n cy.get('#ctl00_central_Isento_Cadastro').click()\n cy.get('#CNPJ_Cadastro').type('02126840000120')            \n cy.get('#Cidades_Cadastro').type('Juiz de Fora') \n       \n cy.get('#btnSalvar2').click()\n cy.get('.confirm').should('exist')\n cy.get('.confirm').click()  */\n//cy.xpath(\"//@class[contains(.,'sa-confirm-button-container')]\").click() \n//cy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]\").should('exist')\n//cy.xpath(\"//h2[contains(.,'sucesso')]\").should('Operação realizada com sucesso', {timeout: 30000})",
+                  "err": {
+                    "message": "CypressError: Timed out retrying: expected '<span#ctl00_central_maCNPJ.RadLabel.RadLabel_Default>' to contain '17685872000133'",
+                    "estack": "CypressError: Timed out retrying: expected '<span#ctl00_central_maCNPJ.RadLabel.RadLabel_Default>' to contain '17685872000133'\n    at Object.cypressErr (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114812:14)",
+                    "diff": null
+                  },
+                  "uuid": "7f27dd15-f71e-43b0-b014-71227546f4fd",
+                  "parentUUID": "98886ba3-1ddc-41d8-82a9-41ca165496c9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Validar obrigatoriedade dos campos",
+                  "fullTitle": "Módulo e-Auditor Testes no Cadastro de Empresas Validar obrigatoriedade dos campos",
+                  "timedOut": null,
+                  "duration": 54592,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Razão Social\ncy.get('#btnSalvar2').click();\ncy.get('p[style=\"display: block;\"]').should('exist'); //cy.xpath(\"//p[contains(.,'Razão Social')]\").should('contains','Informe o campo (Razão Social), da empresa.')\ncy.get('.confirm').click();\ncy.get('#Razao_Social_Cadastro').type('DSG FARMA JD AMERICA LTDA'); // CNPJ\ncy.get('#btnSalvar2').click();\ncy.get('p[style=\"display: block;\"]').should('exist');\ncy.get('.confirm').click();\ncy.get('#CNPJ_Cadastro').type('17685872000133'); // Estado \ncy.get('#btnSalvar2').click();\ncy.get('p[style=\"display: block;\"]').should('exist');\ncy.get('.confirm').click();\ncy.get('#ctl00_central_UF_Cadastro_Input').type('MG');\ncy.get('em').click(); // Cidade\ncy.get('#btnSalvar2').click();\ncy.get('p[style=\"display: block;\"]').should('exist');\ncy.get('.confirm').click();\ncy.get('#Cidade_Cadastro').type('Carmo do Rio Claro'); // Regime de tributação\ncy.get('#btnSalvar2').click();\ncy.get('p[style=\"display: block;\"]').should('exist');\ncy.get('.confirm').click();\ncy.get('#Regime_Tributacao_Cadastro_Input').type('Simples Nacional');\ncy.get('em').click(); //Já existe empresa cadastrada com a mesma Razão social\ncy.get('#btnSalvar2').click();\ncy.get('p[style=\"display: block;\"]').should('exist');\ncy.get('.confirm').click();",
+                  "err": {},
+                  "uuid": "9a54042c-91cd-4b90-b391-39eaf92055f2",
+                  "parentUUID": "98886ba3-1ddc-41d8-82a9-41ca165496c9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Excluir empresa",
+                  "fullTitle": "Módulo e-Auditor Testes no Cadastro de Empresas Excluir empresa",
+                  "timedOut": null,
+                  "duration": 51495,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "//cy.reload()\n// Identificar a empresa cadastrada no teste anterior e excluir\ncy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'DSG FARMA JD AMERICA LTDA - 17685872000133')]\").click();\ncy.wait(5000);\ncy.get('#btn-excluir-empresa').click();\ncy.get('#ButtonExcluirEmpresa').click();\ncy.wait(5000);\ncy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'DSG FARMA JD AMERICA LTDA - 17685872000133')]\").should('not.exist');\ncy.wait(5000); // Identificar a empresa cadastrada no teste anterior e excluir\ncy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]\").click();\ncy.wait(5000);\ncy.get('#btn-excluir-empresa').click();\ncy.get('#ButtonExcluirEmpresa').click();\ncy.wait(5000);\ncy.xpath(\"//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]\").should('not.exist');",
+                  "err": {
+                    "message": "CypressError: Timed out retrying: Expected to find element: '//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]', but never found it.",
+                    "estack": "CypressError: Timed out retrying: Expected to find element: '//*[contains(@id, 'ctl00_ctl00_ContentSidebarLeft_menuSidebarLeft_rtvEmpresasPanel')]//*[contains(@title, 'GILMAQ COMERCIO DE MAQUINAS AGRICOLAS LTDA - EPP - 02126840000120')]', but never found it.\n    at Object.cypressErr (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (https://apigestaoleiauteteste.e-auditoria.com.br/__cypress/runner/cypress_runner.js:114812:14)",
+                    "diff": null
+                  },
+                  "uuid": "26c38331-b441-4884-93b1-89352024160f",
+                  "parentUUID": "98886ba3-1ddc-41d8-82a9-41ca165496c9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9a54042c-91cd-4b90-b391-39eaf92055f2"
+              ],
+              "failures": [
+                "e6e8f084-46d6-4c4c-ab07-2ca567dccf5c",
+                "7f27dd15-f71e-43b0-b014-71227546f4fd",
+                "26c38331-b441-4884-93b1-89352024160f"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 201403,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.3.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
