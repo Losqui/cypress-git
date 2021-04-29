@@ -1672,6 +1672,8 @@ describe.only('6 - Validando a exclusão dos modelos', () => {
 
         cy.get(loc.MODELO.BUSCAR).type('Editar')
         .type('{enter}')
+
+        y.wait(2000)
         cy.xpath(`//tbody//tr[contains(.,'Editar')]`).click()
                                                             .rightclick()
         cy.get(loc.MODELO.BTN_EDITAR).click()
@@ -1679,14 +1681,15 @@ describe.only('6 - Validando a exclusão dos modelos', () => {
         cy.wait(2000)
         cy.get(loc.LEIAUTE.BUSCAR).type('1045748')
         .type('{enter}')
+        y.wait(2000)
         cy.xpath(`//tbody//tr[contains(.,'1045748')]`).click()
                                                 .rightclick()
         cy.get(loc.LEIAUTE.BTN_EDITAR).click()
 
-        cy.wait(2000)
+        cy.wait(3000)
         cy.get(loc.VERSAO.BUSCAR).type('1045748')
         .type('{enter}')
-
+        y.wait(2000)
         cy.xpath(`//tbody//tr[contains(.,'1045748')]`).click()
         .rightclick()
 
@@ -1696,6 +1699,7 @@ describe.only('6 - Validando a exclusão dos modelos', () => {
          cy.reload()
          cy.get(loc.VERSAO.BUSCAR).type('1045748')
          .type('{enter}')
+        cy.wait(2000)
         cy.xpath(`//tbody//tr[contains(.,'1045748')]`).should('not.exist')
         
         cy.get(loc.LEIAUTE.BTN_VOLTAR).click()
@@ -1703,6 +1707,7 @@ describe.only('6 - Validando a exclusão dos modelos', () => {
         cy.wait(2000)
         cy.get(loc.LEIAUTE.BUSCAR).type('1045748')
         .type('{enter}')
+        cy.wait(2000)
         cy.xpath(`//tbody//tr[contains(.,'1045748')]`).click()
                                                     .rightclick()
         cy.get(loc.LEIAUTE.BTN_EXCLUIR).click()
@@ -1781,11 +1786,12 @@ describe.only('6 - Validando a exclusão dos modelos', () => {
                                                     .rightclick()
         cy.get(loc.LEIAUTE.BTN_EXCLUIR).click()
         cy.get(loc.LEIAUTE.MENSAGEMCONFIRMACAOSIM).click()
-        
+        cy.wait(3000)
         cy.reload()
         cy.wait(2000)
         cy.get(loc.LEIAUTE.BUSCAR).type('405233')
         .type('{enter}')
+        cy.wait(1000)
         cy.xpath(`//tbody//tr[contains(.,'405233')]`).should('not.exist')
 
         // cy.get(loc.MODELO.BTN_VOLTAR).click()

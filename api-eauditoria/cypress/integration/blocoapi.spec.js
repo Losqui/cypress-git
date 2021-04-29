@@ -2269,7 +2269,7 @@ describe('6 - Testes API Leiaute - Ordem', () => {
     })
 })
 
-describe.only('7 - Testes API Leiaute - DELETE', () => {
+describe('7 - Testes API Leiaute - DELETE', () => {
         
     it('A - DELETE - Cadastro de Bloco (1 - A)', () => {
         cy.excluirBloco(18)
