@@ -1,0 +1,38 @@
+{
+  "name": "frontend-eauditoria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "LINUXclean:reports": "rm -rf cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
+    "pretest": "npm run clean:reports",
+    "scripts": "cypress run",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "test": "npm run scripts || npm run posttest"
+  },
+  "keywords": [],
+  "author": "Rayner Losque",
+  "license": "ISC",
+  "dependencies": {
+    "xvfb": "^0.4.0"
+  },
+  "devdependencies": {
+    "cypress": "^6.6.0",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.3.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^1.6.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "videoCompression": 0,
+  "description": ""
+}
