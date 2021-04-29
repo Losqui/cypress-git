@@ -1,7 +1,7 @@
 /// <reference types= "cypress" />
 
 
-describe(`Testes API - Cadastro de Bloco (POST)`, () => {
+describe(`1 - Testes API - Cadastro de Bloco (POST)`, () => {
 
     it('A - POST - Cadastrando um Bloco', () => {
         //Cadastrando um modelo pra utilizar nos testes de Leiaute
@@ -237,7 +237,7 @@ describe(`Testes API - Cadastro de Bloco (POST)`, () => {
         })
     })
     // Criar tarefa para ajustar a mensagem de validação
-    it('E - POST - Campo idVersao vazio (Não foi possível encontrar a Versão especificada)', () => {
+    it('D - POST - Campo idVersao vazio (Não foi possível encontrar a Versão especificada)', () => {
         cy.request({
             method: 'POST',
             url: '/Bloco',
@@ -259,7 +259,7 @@ describe(`Testes API - Cadastro de Bloco (POST)`, () => {
         })
     })
 
-    it('F - POST - Todos os campos obrigatórios vazios', () => {
+    it('E - POST - Todos os campos obrigatórios vazios', () => {
         //Buscando no cadastro o modelo registrado acima
         cy.request({
             method: 'GET',
@@ -290,7 +290,7 @@ describe(`Testes API - Cadastro de Bloco (POST)`, () => {
         })
     })
 
-    it('G - POST - Campo Bloco vazio (O campo de Bloco é obrigatório)', () => {
+    it('F - POST - Campo Bloco vazio (O campo de Bloco é obrigatório)', () => {
         //Buscando no cadastro o modelo registrado acima
         cy.request({
             method: 'GET',
@@ -324,7 +324,7 @@ describe(`Testes API - Cadastro de Bloco (POST)`, () => {
         })
     })
 
-    it('H - POST - Campo Nome vazio (O campo de Nome é obrigatório)', () => {
+    it('G - POST - Campo Nome vazio (O campo de Nome é obrigatório)', () => {
         //Buscando no cadastro o modelo registrado acima
         cy.request({
             method: 'GET',
@@ -393,7 +393,7 @@ describe(`Testes API - Cadastro de Bloco (POST)`, () => {
     })
 
 })
-describe(`Testes API - Cadastro de Bloco (PUT)`, () => {
+describe(`2 - Testes API - Cadastro de Bloco (PUT)`, () => {
 
     it('A - PUT - Alterar (Bloco) de um Bloco', () => {
         //Cadastrando um modelo pra utilizar nos testes de Leiaute
@@ -1148,7 +1148,7 @@ describe(`Testes API - Cadastro de Bloco (PUT)`, () => {
         })
     })
 
-    it('S - PUT - Alterar campo Bloco duplicado (Já existe um Bloco com este nome)', () => {
+    it('G - PUT - Alterar campo Bloco duplicado (Já existe um Bloco com este nome)', () => {
         //Cadastrando um modelo pra utilizar nos testes de Leiaute
         cy.request({
             method: 'POST',
@@ -1298,7 +1298,7 @@ describe(`Testes API - Cadastro de Bloco (PUT)`, () => {
 
 })
 
-describe(`2 - Teste API Bloco (Filtros)`, () => {
+describe(`3 - Teste API Bloco (Filtros)`, () => {
     it('A - POST - Populando base com Bloco', () => {
         //Cadastrando um modelo pra utilizar nos testes de Leiaute
         cy.request({
@@ -1542,7 +1542,7 @@ describe(`2 - Teste API Bloco (Filtros)`, () => {
 
 })
 
-describe(`3 - Teste API Bloco (Validando: Limite de caracteres)`, () => {
+describe(`4 - Teste API Bloco (Validando: Limite de caracteres)`, () => {
     it('A - POST - Limite de caracteres - Bloco [50]', () => {
         //Cadastrando um modelo pra utilizar nos testes de Leiaute
         cy.request({
@@ -1979,10 +1979,9 @@ describe(`3 - Teste API Bloco (Validando: Limite de caracteres)`, () => {
         })
     })
 
-
 })
 
-describe('4 - Testes API Leiaute - Clonar', () => {
+describe('5 - Testes API Leiaute - Clonar', () => {
 
     it('A - POST - Clonar Bloco', () => {
         cy.cadastrarModelo('Modelo Clone bloco')  //Cadastrando um modelo pra utilizar nos testes de Leiaute
@@ -2111,7 +2110,7 @@ describe('4 - Testes API Leiaute - Clonar', () => {
     })
 })
 
-describe('5 - Testes API Leiaute - Ordem', () => {
+describe('6 - Testes API Leiaute - Ordem', () => {
 
     it('A - PUT - Alterando a ordem dos Blocos', () => {
         cy.cadastrarModelo('Modelo ordenamento de bloco')  //Cadastrando um modelo pra utilizar nos testes de Leiaute
@@ -2270,7 +2269,7 @@ describe('5 - Testes API Leiaute - Ordem', () => {
     })
 })
 
-describe('6 - Testes API Leiaute - DELETE', () => {
+describe.only('7 - Testes API Leiaute - DELETE', () => {
         
     it('A - DELETE - Cadastro de Bloco (1 - A)', () => {
         cy.excluirBloco(18)
@@ -2307,28 +2306,28 @@ describe('6 - Testes API Leiaute - DELETE', () => {
         cy.excluirModelo('Alterando descrição')
     })
 
-    it('F - DELETE - Cadastro de Bloco (2 - C)', () => {
+    it('F - DELETE - Cadastro de Bloco (2 - D)', () => {
         cy.excluirBloco(79)
         cy.excluirVersao(1898)
         cy.excluirLeiaute(8856)
         cy.excluirModelo('Alterando b vazio')
     })
 
-    it('G - DELETE - Cadastro de Bloco (2 - C)', () => {
+    it('G - DELETE - Cadastro de Bloco (2 - E)', () => {
         cy.excluirBloco(89)
         cy.excluirVersao(1561)
         cy.excluirLeiaute(6774)
         cy.excluirModelo('Alterando Nm vazio')
     })
 
-    it('H - DELETE - Cadastro de Bloco (2 - C)', () => {
+    it('H - DELETE - Cadastro de Bloco (2 - F)', () => {
         cy.excluirBloco(99)
         cy.excluirVersao(46991)
         cy.excluirLeiaute(8579)
         cy.excluirModelo('Alterando Descric vazio')
     })
 
-    it('I - DELETE - Cadastro de Bloco (2 - C)', () => {
+    it('I - DELETE - Cadastro de Bloco (2 - G)', () => {
         cy.excluirBloco(105)
         cy.excluirBloco(85)
         cy.excluirVersao(58411)
@@ -2387,7 +2386,7 @@ describe('6 - Testes API Leiaute - DELETE', () => {
         cy.excluirModelo('Modelo ordenamento de bloco')
     })
 
-    it.only('Q - DELETE - ID inválido ', () => {
+    it('Q - DELETE - ID inválido ', () => {
         cy.request({
             method: 'DELETE',
             url: `/Bloco/asdsafsf-fdsfsd`,
