@@ -2387,5 +2387,23 @@ describe('6 - Testes API Leiaute - DELETE', () => {
         cy.excluirModelo('Modelo ordenamento de bloco')
     })
 
+    it.only('Q - DELETE - ID inválido ', () => {
+        cy.request({
+            method: 'DELETE',
+            url: `/Bloco/asdsafsf-fdsfsd`,
+            failOnStatusCode: false
+        }).as('response')
+
+        cy.get('@response').then(resposta => {
+            console.log(resposta)
+            expect(resposta.status).to.be.equal(404)
+            expect(resposta.body.errors[""][0]).to.be.equal('A identificação do Bloco é inválida')
+
+        })
+
+        
+    })
+
+
 
 })
