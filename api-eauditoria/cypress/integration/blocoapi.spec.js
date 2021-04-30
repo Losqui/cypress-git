@@ -236,7 +236,7 @@ describe(`1 - Testes API - Cadastro de Bloco (POST)`, () => {
             })
         })
     })
-    // Criar tarefa para ajustar a mensagem de validação
+    // EA-153  Criar tarefa para ajustar a mensagem de validação
     it('D - POST - Campo idVersao vazio (Não foi possível encontrar a Versão especificada)', () => {
         cy.request({
             method: 'POST',
@@ -257,6 +257,7 @@ describe(`1 - Testes API - Cadastro de Bloco (POST)`, () => {
             expect(resposta.body.errors[""][0]).to.be.equal('Não foi possível encontrar a Versão especificada')
             // expect(resposta.body.errors[""][0]).to.be.equal('Não foi possível encontrar o Versão especificado')
         })
+      
     })
 
     it('E - POST - Todos os campos obrigatórios vazios', () => {
