@@ -47,12 +47,11 @@ describe('1 - Cadastro de modelo', () => {
         cy.wait(500)
         cy.get(loc.MODELO.TIPOARQUIVOPOSICIONAMENTO).click()
 
-        cy.get('#cadastro-modelo-form_configArquivo').should('not.visible')
+        cy.get(loc.MODELO.CONFIGARQUIVO).should('not.visible')
         
-        // //cy.get(loc.MODELO.BTN_SALVARPROSSEGUIR).click()
-        cy.get('.ant-form-item-control-input-content > :nth-child(1) > :nth-child(2) > .ant-btn').click()
-
-        cy.get('.ant-message-custom-content').should('contain','Dados de Modelo salvos com sucesso!')
+        cy.get(loc.MODELO.BTN_SALVARPROSSEGUIR).click()
+                
+        cy.get(loc.MODELO.MESSAGESUCCESS).should('contain','Dados de Modelo salvos com sucesso!')
         cy.get('.ant-layout-content > :nth-child(2)').should('contain', 'Cadastrar Leiaute')
 
     })
@@ -73,20 +72,6 @@ describe('1 - Cadastro de modelo', () => {
  
     it('D - Clonar modelo', () => {
         cy.criarModelo('Clonar modelo', 'Descrição cadastro modelo clonar', '|||||')
-
-        // cy.visit('/novo')
-        
-        // cy.get('.ant-select-clear > .anticon > svg').click()
-        // cy.get(loc.MODELO.NOME).type('Clonar modelo')
-        // cy.get(loc.MODELO.DESCRICAO).type('Descrição cadastro modelo clonar')
-        // cy.get(loc.MODELO.TAGA).click()
-        // cy.get(loc.MODELO.TAGS).click()
-        // cy.get(':nth-child(4) > .ant-form-item-label').click()//clicar em qualquer parte da tela
-        // cy.get(loc.MODELO.TIPOARQUIVOA).click()
-        // cy.get(loc.MODELO.TIPOARQUIVOSEPARADOR).click()
-        // cy.get(loc.MODELO.CONFIGARQUIVO).type('|||||')
-        // cy.get(loc.MODELO.BTN_SALVARPROSSEGUIR).click()
-        
 
         cy.get('.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-icon').click()
         cy.get('.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-icon').click()
@@ -130,21 +115,6 @@ describe('1 - Cadastro de modelo', () => {
                         cy.criarModelo('IPI Modelo', 'Descrição Cadastro duplicado', '|||||')
                         cy.wait(1000)
 
-
-
-
-            //cy.criarModelo('Cadastro modelo cy separador 1', 'Teste descrição cy', '|||||')
-
-            // cy.visit('/novo')
-            // //cy.get('.ant-select-clear > .anticon > svg > path').click()
-
-            // cy.get(loc.MODELO.NOME).type('Cadastro modelo cy separador 1')
-            // cy.get(loc.MODELO.DESCRICAO).type('Teste descrição cy')
-            // cy.get(loc.MODELO.TAGA).click()
-            // cy.get(loc.MODELO.TAGS).click()
-            // cy.get(':nth-child(4) > .ant-form-item-label').click()//clicar em qualquer parte da tela
-            // cy.get(loc.MODELO.CONFIGARQUIVO).type('|||||')
-            //cy.get(loc.MODELO.BTN_SALVARPROSSEGUIR).click()
 
             cy.get(loc.MODELO.MENSAGEMALERTA).should('contain', 'Existem erros que precisam ser tratados, verifique os erros abaixo:')
             cy.get(loc.MODELO.VALIDACAONOME).should('contain', 'Já existe um Modelo com o nome especificado')
@@ -226,7 +196,7 @@ describe('1 - Cadastro de modelo', () => {
             
             cy.get(loc.MODELO.BTN_SALVARPROSSEGUIR).click()
             cy.get('.ant-layout-content > :nth-child(2)').should('contain', 'Cadastrar Leiaute')
-            cy.get('.ant-message-custom-content').should('contain','Dados de Modelo salvos com sucesso!')
+            cy.get(loc.MODELO.MESSAGESUCCESS).should('contain','Dados de Modelo salvos com sucesso!')
         })
 
         it('H - Editar Modelo utilizando Nome já utilizado (Tela de Edição)', () => {
@@ -308,7 +278,7 @@ describe('1 - Cadastro de modelo', () => {
             cy.get('.ant-select-clear > .anticon > svg').click()
             cy.get(loc.MODELO.BTN_SALVAR).click()
             cy.get(loc.MODELO.VALIDACAOTIPOARQUIVO).should('contain', 'Por favor, selecione um Tipo de Arquivo')
-            cy.get('#cadastro-modelo-form_configArquivo').should('not.visible')
+            cy.get(loc.MODELO.CONFIGARQUIVO).should('not.visible')
     
         })
     
@@ -454,8 +424,7 @@ describe('1 - Cadastro de modelo', () => {
                 it('B - Validar botão Voltar - Não (campos preenchidos)', () => {
                     cy.visit('/')
                     cy.wait(200)
-                    cy.get(loc.MODELO.BTN_MENU).click()
-                    cy.get(loc.MODELO.BTN_MENU_CADASTRARMODELO).click()
+                    cy.get(loc.MODELO.BTN_NOVO).click()
                     cy.wait(200)
                     cy.get(loc.MODELO.NOME).type('Teste Nome modelo cy 1')
                     cy.get(loc.MODELO.DESCRICAO).type('Teste descrição modelo cy 1')
@@ -469,8 +438,7 @@ describe('1 - Cadastro de modelo', () => {
                 it('C - Validar botão Voltar - Sim (campos preenchidos)', () => {
                     cy.visit('/')
                     cy.wait(200)
-                    cy.get(loc.MODELO.BTN_MENU).click()
-                    cy.get(loc.MODELO.BTN_MENU_CADASTRARMODELO).click()
+                    cy.get(loc.MODELO.BTN_NOVO).click()
                     cy.wait(200)
                     cy.get(loc.MODELO.NOME).type('Teste Nome modelo cy 1')
                     cy.get(loc.MODELO.DESCRICAO).type('Teste descrição modelo cy 1')
@@ -495,7 +463,7 @@ describe('1 - Cadastro de modelo', () => {
                     cy.get(loc.MODELO.BTN_LIMPAR).click()
                     cy.get(loc.MODELO.MENSAGEMVALIDACAO).should('contain','Tem certeza que deseja limpar todos os campos do formulário?')//
                     cy.get(loc.MODELO.MENSAGEMCONFIRMACAOSIM).click()//clicar em Não
-                    cy.get('.styles__Title-sc-12b1chh-2').should('contain', 'Cadastrar Modelo')
+                    cy.get(loc.MODELO.NOMETELA).should('contain', 'Cadastrar Modelo')
                     
                 })
 
@@ -517,7 +485,7 @@ describe('1 - Cadastro de modelo', () => {
                     cy.get(loc.MODELO.BTN_LIMPAR).click()
                     cy.get(loc.MODELO.MENSAGEMVALIDACAO).should('contain','Tem certeza que deseja limpar todos os campos do formulário?')//
                     cy.get(loc.MODELO.MENSAGEMCONFIRMACAOSIM).click()//clicar em Não
-                    cy.get('.styles__Title-sc-12b1chh-2').should('contain', 'Cadastrar Modelo')
+                    cy.get(loc.MODELO.NOMETELA).should('contain', 'Cadastrar Modelo')
                     cy.get(loc.MODELO.NOME).should('not.have.value','Teste Nome modelo cy 1')
                     cy.get(loc.MODELO.DESCRICAO).should('not.have.value','Teste descrição modelo cy 1')
                     
