@@ -430,13 +430,13 @@ describe('2 - Validação de campos - Cadastro de leiaute', () => {
         cy.excluirModelo('Modelo nove')
             
     })
-    //EA-123 Esse cenário não precisa ser executado.
-    it.skip('H - Validar Leiaute Passando um valor Não numerico no campo Código (Campo deve aceitar apenas valores Numéricos)', () => {
+    //EA-123 Corrigido
+    it('H - Validar Leiaute Passando um valor Não numerico no campo Código (Campo deve aceitar apenas valores Numéricos)', () => {
         cy.criarModelo('Modelo dez', 'descrição do modelo dez', '//')
 
         cy.wait(3000)
         
-        cy.get(loc.LEIAUTE.CODIGO).type('e')
+        cy.get(loc.LEIAUTE.CODIGO).type('eEqQwWrRtTyuiopçlkjhgfdsazxcvbnmMNBVCXZLKJHGFDSAPOIUY')
         cy.get(loc.LEIAUTE.DESCRICAO).type('Breve descrição do leiaute')
         cy.get(loc.LEIAUTE.STATUS).click()
         cy.get('#cadastro-leiaute-form_vigencia').click()
@@ -446,6 +446,8 @@ describe('2 - Validação de campos - Cadastro de leiaute', () => {
         cy.get(loc.LEIAUTE.BTN_SALVARPROSSEGUIR).click()
         cy.get(loc.LEIAUTE.VALIDACAOCODIGO).should('contain', 'Por favor, informe o Código do Leiaute')
 
+
+        cy.excluirModelo('Modelo dez')
     }) 
     //EA-122 Backlog
     it.skip('I - Validar um Leiaute onde o período de vigência coincide com outro já cadastrado (Existe um conflito de vigência com outro leiaute cadastrado)', () => {
@@ -2938,7 +2940,4 @@ describe.skip('6 - Validando a exclusão dos Leiautes', () => {
         cy.excluirModelo('Ordem')
     })
 
-
-
-   
 })

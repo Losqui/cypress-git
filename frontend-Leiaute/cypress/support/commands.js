@@ -98,6 +98,7 @@ Cypress.Commands.add('excluirModelo', (nomeModelo) => {
     cy.get(loc.MODELO.BTN_EXCLUIR).click()
     cy.get(loc.MODELO.EXCLUSAOCRITICANOME).type(nomeModelo)
     cy.get(loc.MODELO.MENSAGEMEXCLUSAOCRITICASIM).click()
+    cy.wait(2000)
     cy.reload()
     cy.xpath(`//tbody//tr[contains(., '${nomeModelo}')]`).should('not.exist')
     
